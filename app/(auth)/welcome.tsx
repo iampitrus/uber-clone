@@ -36,14 +36,14 @@ export default function Onboarding() {
               resizeMode="contain"
             />
             <View className="flex flex-row items-center w-full mt-10">
-              <Text className="text-black text-3xl font-bold mx-10 text-center">
+              <Text className="text-black text-3xl font-JakartaBold mx-10 text-center">
                 {item.title}
               </Text>
             </View>
             <Text className="text-lg font-JakartaSemiBold text-center text-[#858585] mx-10 mt-3">
               {item.description}
             </Text>
-            <Text>{item.title}</Text>
+            <Text className="font-JakartaMedium">{item.title}</Text>
           </View>
         ))}
       </Swiper>

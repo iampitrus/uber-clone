@@ -2,9 +2,9 @@ import CustomButton from "@/components/CustomButton";
 import InputField from "@/components/InputField";
 import OAuth from "@/components/OAuth";
 import { icons, images } from "@/constants";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { useState } from "react";
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image, Alert } from "react-native";
 
 export default function SignIn() {
   const [form, setForm] = useState({
@@ -13,7 +13,9 @@ export default function SignIn() {
   });
 
   const onSignin = async () => {
+    if (!form) Alert.alert("Info", "You have to fill the details to proceed!");
     console.log(form);
+    router.push("/(root)/(tabs)/home");
   };
 
   return (
@@ -53,8 +55,6 @@ export default function SignIn() {
             <Text>Don't have an account?</Text>
             <Text className="text-primary-500">Sign Up</Text>
           </Link>
-
-          {/* verification */}
         </View>
       </View>
     </ScrollView>
